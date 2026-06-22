@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>查询与对照 · 6686体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fcedd5 0%, #f8d9b0 50%, #f5cfa3 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      line-height: 1.7;
+      color: #2e241b;
+    }
+
+    .page-card {
+      max-width: 820px;
+      width: 100%;
+      background: #fffcf7;
+      padding: 2.8rem 2.2rem;
+      border-radius: 48px 16px 48px 16px;
+      box-shadow: 0 16px 40px -12px rgba(150, 90, 40, 0.28);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .page-card:hover {
+      box-shadow: 0 20px 48px -10px rgba(130, 70, 30, 0.30);
+    }
+
+    .opening {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #a5683a;
+      letter-spacing: 0.02em;
+      border-left: 5px solid #dba27b;
+      padding-left: 1.2rem;
+      margin-bottom: 1.6rem;
+      font-style: normal;
+    }
+
+    .opening strong {
+      font-weight: 500;
+      color: #7f4a28;
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      color: #3f3227;
+      text-align: justify;
+      word-break: break-word;
+    }
+
+    .intro-text a {
+      color: #b36f43;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid rgba(179, 111, 67, 0.2);
+      transition: border-color 0.2s, background 0.15s;
+      padding: 0.05em 0.15em;
+      border-radius: 6px;
+    }
+
+    .intro-text a:hover {
+      border-bottom-color: #b36f43;
+      background: #fae7da;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 1.8rem;
+      margin: 2rem 0 1.8rem 0;
+      padding: 0.2rem 0;
+    }
+
+    .feature-item {
+      flex: 1 1 200px;
+      background: #fbf3ea;
+      border-radius: 30px 12px 30px 12px;
+      padding: 1.2rem 1.4rem;
+      list-style: none;
+      box-shadow: inset 0 1px 3px rgba(255, 225, 200, 0.4), 0 4px 8px rgba(140, 85, 40, 0.06);
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .feature-item:hover {
+      background: #f9ede1;
+      transform: translateY(-2px);
+    }
+
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #7f4a28;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.01em;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #4f3d30;
+      margin: 0.2rem 0 0 0;
+    }
+
+    .scenario-note {
+      background: #f6efe7;
+      padding: 1.2rem 1.6rem;
+      border-radius: 28px 10px 28px 10px;
+      margin: 1.8rem 0 1.6rem 0;
+      color: #3a2b21;
+      font-size: 0.98rem;
+      border: 1px solid #eedace;
+    }
+
+    .scenario-note span {
+      display: inline-block;
+      background: #e1cbb8;
+      color: #3f2b1c;
+      font-weight: 500;
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .faq-mini {
+      margin-top: 1.8rem;
+      padding-top: 1.6rem;
+      border-top: 2px dashed #ddc7b4;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      background: #f9f1e9;
+      padding: 0.4rem 1rem 0.4rem 1.2rem;
+      border-radius: 30px 8px 30px 8px;
+      cursor: pointer;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #6b432b;
+      padding: 0.3rem 0;
+      font-size: 0.98rem;
+      outline: none;
+    }
+
+    .faq-mini details p {
+      padding: 0.4rem 0 0.8rem 0.2rem;
+      color: #423329;
+      font-size: 0.92rem;
+      border-top: 1px solid #e5d4c4;
+      margin-top: 0.2rem;
+    }
+
+    .gentle-end {
+      margin-top: 2.2rem;
+      padding: 0.6rem 0.8rem;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #6f523e;
+      border-top: 1px solid #eedbcb;
+    }
+
+    .gentle-end a {
+      color: #a05f36;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #dbaa87;
+    }
+
+    .gentle-end a:hover {
+      border-bottom: 2px solid #8f5530;
+    }
+
+    @media (max-width: 580px) {
+      .page-card {
+        padding: 2rem 1.2rem;
+      }
+      .opening {
+        font-size: 1.1rem;
+        padding-left: 0.8rem;
+      }
+      .feature-grid {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .feature-item {
+        flex: 1 1 auto;
+      }
+      .scenario-note {
+        padding: 0.8rem 1rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .page-card {
+        padding: 1.6rem 0.8rem;
+        border-radius: 28px 8px 28px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-card">
+    <div class="opening">
+      <strong>日常查询</strong> · 翻一翻，对一对，慢慢看
+    </div>
+
+    <div class="intro-text">
+      生活中总有些零散的问题需要确认：某个规则怎么理解、一组数据从哪对照、或者想延伸看看最近有没有更新说明。<br>
+      翻网页、翻笔记，其实都在找一种更轻快的方式把信息理清楚。<br>
+      有朋友推荐了 <a href="https://wap-6686.com">6686体育</a>，说里面的内容分类比较直接，查询起来不绕路。<br>
+      试过几次之后，发现确实能省下不少来回翻找的时间，尤其适合那些需要反复比对、逐条确认的场景。
+    </div>
+
+    <ul class="feature-grid">
+      <li class="feature-item">
+        <h3>分类对照</h3>
+        <p>页面按主题分组，可以并排查看不同条目，日常核对时一目了然。</p>
+      </li>
+      <li class="feature-item">
+        <h3>延伸参考</h3>
+        <p>每一部分往往附带相关说明或注释，适合做进一步阅读的起点。</p>
+      </li>
+      <li class="feature-item">
+        <h3>常更常新</h3>
+        <p>内容会随实际情况调整，不会长时间停留在旧版本上，比较安心。</p>
+      </li>
+    </ul>
+
+    <div class="scenario-note">
+      <span>📋 举个例子</span>
+      想确认某类活动的解释是否和自己理解一致，直接翻到对应的说明栏，对照两三条就能明白。不用反复切换页面，也不用自己再重新整理一遍。
+    </div>
+
+    <div class="faq-mini">
+      <details>
+        <summary>◈ 查找信息时需要注意什么？</summary>
+        <p>尽量先看页面上的主标题和标注，多数关键点都放在显眼位置。如果还有疑问，可以顺着相关链接再延伸查看。</p>
+      </details>
+      <details>
+        <summary>◈ 页面内容多久会更新一次？</summary>
+        <p>没有固定周期，但通常根据实际需要调整。可以隔段时间再看一眼，避免错过新的补充说明。</p>
+      </details>
+    </div>
+
+    <div class="gentle-end">
+      慢慢翻，慢慢对，心里有底就好。<br>
+      需要时可以再回到 <a href="https://wap-6686.com">6686体育</a> 看看。
+    </div>
+  </div>
+</body>
+</html>
