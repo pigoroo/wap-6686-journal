@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hub Sport FIFA 2026 · 世界杯信息平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f2f3f5;
+      color: #222;
+      line-height: 1.6;
+      padding: 28px 18px;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    /* hero 区域 */
+    .hero {
+      background: linear-gradient(145deg, #fafbfc, #f0f1f3);
+      border-radius: 28px;
+      padding: 48px 36px 52px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.02), 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e4e6ea;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: #1a1c20;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #5b5f66;
+      max-width: 640px;
+      margin: 12px auto 20px;
+      border-top: 1px solid #d9dce0;
+      padding-top: 16px;
+    }
+
+    .hero .standout {
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      border: 1px solid #d0d3d9;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      color: #2c3e50;
+    }
+
+    /* 通用卡片 */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 36px 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 28px 26px;
+      flex: 1 1 280px;
+      border: 1px solid #e1e4e8;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s ease, transform 0.1s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+      border-color: #cdd1d7;
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #1f2229;
+      margin-bottom: 14px;
+      border-left: 4px solid #97a0ae;
+      padding-left: 14px;
+    }
+
+    .card p, .card li {
+      color: #353a42;
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 4px;
+    }
+
+    .card ul li {
+      padding: 6px 0 6px 22px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%23828a96" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>') left center no-repeat;
+      background-size: 12px;
+    }
+
+    .highlight-box {
+      background: #f6f8fa;
+      border-radius: 24px;
+      padding: 32px 30px;
+      margin: 32px 0;
+      border: 1px solid #d9dde3;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.01);
+    }
+
+    .highlight-box h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #1d2127;
+      margin-bottom: 12px;
+    }
+
+    .highlight-box p {
+      margin-bottom: 14px;
+    }
+
+    .link-sentence {
+      background: #ffffff;
+      padding: 18px 26px;
+      border-radius: 60px;
+      border: 1px solid #d3d7dd;
+      display: inline-block;
+      margin: 10px 0 6px;
+      font-size: 0.98rem;
+    }
+
+    .link-sentence a {
+      color: #1e3a5f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #8d9db0;
+    }
+
+    .link-sentence a:hover {
+      border-bottom: 2px solid #1e3a5f;
+    }
+
+    .faq-mini {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .faq-item {
+      background: #f9fafb;
+      border-radius: 16px;
+      padding: 16px 20px;
+      flex: 1 1 240px;
+      border: 1px solid #e4e7ec;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #1a1e26;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .faq-item span {
+      color: #454b54;
+      font-size: 0.9rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d7dbe0;
+      margin: 36px 0 16px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #6e767f;
+      font-size: 0.85rem;
+      padding: 20px 0 10px;
+      border-top: 1px solid #dfe2e7;
+      margin-top: 40px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 32px 20px;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .card {
+        padding: 22px 18px;
+      }
+      .highlight-box {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero 摘要 -->
+  <header class="hero">
+    <h1>世界杯 · 信息导航</h1>
+    <div class="sub">
+      快速了解 <a href="https://hub-sport-fifa2026.com" style="color:#1e3a5f; text-decoration:none; border-bottom:1px dashed #8d9db0;">世界杯</a> 赛事日程、球队动态与观赛资源的一站式参考平台。
+    </div>
+    <div class="standout">
+      面向希望清晰识别网站用途的球迷与从业者
+    </div>
+  </header>
+
+  <!-- 亮点卡片：产品说明式 -->
+  <div class="card-grid">
+    <div class="card">
+      <h2>📌 核心摘要</h2>
+      <p>Hub Sport FIFA 2026 聚合了与下一届世界杯相关的公开信息、赛程框架、举办城市及资格赛动态。界面以查询和索引为导向，不提供未经核实的流媒体链接或博彩内容。</p>
+    </div>
+    <div class="card">
+      <h2>⚡ 功能亮点</h2>
+      <ul>
+        <li>赛程日历与阶段概览（小组赛至决赛）</li>
+        <li>参赛球队及预选赛进展汇总</li>
+        <li>主办球场、容量及地图位置参考</li>
+        <li>新闻摘要与官方合作伙伴列表</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>🧭 使用建议</h2>
+      <p>适合作为观赛规划、资料查阅或内容创作的起点。建议搭配 FIFA 官方渠道交叉核对具体日期及规则变更。页面数据基于公开信息整理，更新频率一般为每周一次。</p>
+    </div>
+  </div>
+
+  <!-- 可信但克制的说明 + 嵌入链接 -->
+  <div class="highlight-box">
+    <h3>关于本平台的定位</h3>
+    <p>这是一个非官方的信息索引站，运营团队与 FIFA 及任何国家足协无隶属关系。所有内容均来自可查证的公开来源，包括赛事官网、媒体发布及体育数据机构。我们刻意避免使用“独家”“绝对准确”等夸大表述，并建议用户通过官方渠道确认关键信息。</p>
+    <p>
+      如果你正在寻找一个整合了 
+      <span class="link-sentence">
+        2026年<a href="https://hub-sport-fifa2026.com">世界杯</a>最新赛程与球队资料的页面
+      </span>
+      ，这个站点或许可以作为你的收藏夹之一。
+    </p>
+    <p style="font-size:0.9rem; color:#535a63; margin-top:8px;">我们不会请求任何个人信息，也不嵌入第三方追踪脚本。页面仅提供信息参考。</p>
+  </div>
+
+  <!-- 场景与FAQ摘要 -->
+  <h2 style="font-weight:400; font-size:1.2rem; margin: 30px 0 10px; color:#292e36;">常见使用场景</h2>
+  <div class="faq-mini">
+    <div class="faq-item">
+      <strong>📅 赛程规划</strong>
+      <span>快速查阅小组赛与淘汰赛日期，生成个人观赛时间表。</span>
+    </div>
+    <div class="faq-item">
+      <strong>🏟️ 球场信息</strong>
+      <span>了解北美各主办城市体育场容量、交通接驳及周边设施简述。</span>
+    </div>
+    <div class="faq-item">
+      <strong>📰 动态跟踪</strong>
+      <span>获取预选赛结果、积分榜及国家队大名单变动摘要。</span>
+    </div>
+    <div class="faq-item">
+      <strong>🔍 内容参考</strong>
+      <span>写文章、做视频或教学时，可作为查阅基础数据的辅助页。</span>
+    </div>
+  </div>
+
+  <!-- 小提示 -->
+  <hr>
+  <div style="background:#f5f6f8; border-radius: 24px; padding: 20px 28px; border:1px solid #dde0e5;">
+    <p style="color:#2f363f;"><strong>提示：</strong> 本页面所有指向 <a href="https://hub-sport-fifa2026.com" style="color:#1e3a5f;">世界杯</a> 的链接均为自然引用，用于说明网站用途。建议将网站加入书签，并在浏览器地址栏核实域名拼写。</p>
+    <p style="color:#4f5762; margin-top:10px; font-size:0.9rem;">如对内容准确性有疑问，欢迎通过公开反馈渠道提供修正建议。我们秉持信息克制的原则，不显示猜测性或未经验证的赛果。</p>
+  </div>
+
+  <div class="footer-note">
+    <span>Hub Sport FIFA 2026 · 信息参考页 · 非官方 · 数据来源见各节标注</span>
+    <div style="margin-top:6px; color:#7a828c;">—— 以清晰识别网站用途为出发点构建 ——</div>
+  </div>
+
+</div>
+</body>
+</html>
